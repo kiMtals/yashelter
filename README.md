@@ -1,5 +1,5 @@
 # Приют для животных
-Приложение написано на python+psql prometheus+grafana и еще alertmanager прометеуса, еще тут есть SwaggerUi и немного изменений ваш тестовый нагрузчик main.go, все запускается из докер компоуса, безопасности никакой нет, все сервисы доступны извне почти без паролей. Тут дашборд графаны который испольузется Flask API Monitoring Dashboard: **monitoring/grafana/dashboards/dash.json **
+Приложение написано на python+psql prometheus+grafana и еще alertmanager прометеуса, еще тут есть SwaggerUi и немного изменений ваш тестовый нагрузчик main.go, все запускается из докер компоуса, безопасности никакой нет, все сервисы доступны извне почти без паролей. Тут дашборд графаны который испольузется Flask API Monitoring Dashboard: **monitoring/grafana/dashboards/dash.json**
 
 
 В теории тут на 6 баллов
