@@ -19,7 +19,7 @@ password: **admin123**
 Вот тг канал с алертами - https://t.me/o11t_shesh
 
 
-Вот видео-демонстрация - 
+Вот видео-демонстрация - https://youtu.be/CsWIy1g5tmM
 
 
 
