@@ -1,0 +1,22 @@
+groups:
+  - name: flask_alerts
+    rules:
+      - alert: HighP99Latency
+        expr: histogram_quantile(0.99, rate(http_request_duration_seconds_bucket{endpoint="/slow"}[1m])) > 0.5
+        for: 30s
+        labels:
+          alertname: HighP99Latency
+          severity: warning
+          endpoint: /slow
+        annotations:
+          description: "P99 задержка /slow превысила 500ms"
+
+      - alert: HighDBRPS
+        expr: rate(http_requests_total{endpoint="/animals"}[30s]) > 100
+        for: 15s
+        labels:
+          alertname: HighDBRPS
+          severity: critical
+          endpoint: /animals
+        annotations:
+          description: "RPS к базе превысил 100"

@@ -1,0 +1,20 @@
+global:
+  resolve_timeout: 1m
+
+route:
+  receiver: telegram
+  group_wait: 10s              # как быстро отправлять первую группу
+  group_interval: 30s          # как часто группировать новые алерты
+  repeat_interval: 1m          # <== повтор через 1 минуту, как ты хочешь
+
+receivers:
+  - name: telegram
+    telegram_configs:
+      - bot_token: 7608855296:AAGJhOpRcshFcXZuBBUYBH7R-pIwCzQnXUw
+        chat_id: -1002687597192
+        parse_mode: HTML
+        message: |
+          🚨 <b>{{ .Status | toUpper }}</b> ALERT (❁´◡`❁)
+          <b>{{ .CommonLabels.alertname }}</b>
+          <b>Endpoint:</b> {{ .CommonLabels.endpoint }}
+          <b>Details:</b> {{ .CommonAnnotations.description }}
